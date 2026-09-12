@@ -4,7 +4,7 @@ const cors = require("cors");
 app.use(express.json());
 
 const corsOptions = {
-    origin: ["https://express.vercel.app/static/"],
+    origin: [],
     methods: "GET, POST, OPTIONS",
     allowedHeaders: "Content-Type"
 }
