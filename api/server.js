@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-module.exports = app;
 app.use(express.json());
 
 const corsOptions = {
@@ -11,17 +10,19 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
-const port = 3000;
-app.listen(port, () => console.log("Сервер запущен!"));
+//const port = 3000;
+//app.listen(port, () => console.log("Сервер запущен!"));
 
-app.get("/data", (req, res) => {  
+app.get("/api/data", (req, res) => {  
     res.status(200).send("Наш ответ");
     console.log("Ответ отправлен!");
 });
 
-app.post("/setData", (req, res) => {
+app.post("/api/setData", (req, res) => {
     const data = req.body;
     console.log("Ответ получен! Вот его данные:");
     console.log(data.n);
     res.status(200).send("Данные выведены на консоль");
 });
+
+module.exports = app;
