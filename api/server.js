@@ -4,6 +4,13 @@ const app = express();
 module.exports = app;
 app.use(express.json());
 
+const corsOptions = {
+    origin: "*",
+    methods: "GET, POST, OPTIONS",
+    allowedHeaders: "Content-Type"
+}
+app.use(cors(corsOptions));
+
 const port = 3000;
 app.listen(port, () => console.log("Сервер запущен!"));
 
