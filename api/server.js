@@ -4,7 +4,7 @@ const cors = require("cors");
 app.use(express.json());
 
 const corsOptions = {
-    origin: ["bebra"],
+    origin: ["https://expressmir.vercel.app"],
     methods: "GET, POST, OPTIONS",
     allowedHeaders: "Content-Type"
 }
