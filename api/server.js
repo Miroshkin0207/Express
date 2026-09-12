@@ -4,7 +4,7 @@ const cors = require("cors");
 app.use(express.json());
 
 const corsOptions = {
-    origin: [],
+    origin: ["bebra"],
     methods: "GET, POST, OPTIONS",
     allowedHeaders: "Content-Type"
 }
