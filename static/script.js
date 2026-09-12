@@ -1,7 +1,7 @@
 document.querySelector("button").onclick = async () =>
 {
     let text;
-    const answer = await fetch("https://expressmir.vercel.app/api/data", {
+    const answer = await fetch("https://expressmir.vercel.app/api/server/data", {
         method: "GET"
     });
     text = await answer.text();
@@ -11,7 +11,7 @@ document.querySelector("button").onclick = async () =>
 document.querySelectorAll("button")[1].onclick = async () =>
 {
     let text;
-    const answer = await fetch("https://expressmir.vercel.app/api/setData", {
+    const answer = await fetch("https://expressmir.vercel.app/api/server/setData", {
         headers: { "Content-Type": "application/json" },
         method: "POST",
         body: JSON.stringify({ n: 5 })
