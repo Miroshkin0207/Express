@@ -5,6 +5,14 @@
       "destination": "static/"
     }
   ],
+   "builds": [
+    { "src": "api/server.js", "use": "@vercel/node" },
+    { "src": "static/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "api/server.js" },
+    { "src": "/(.*)", "dest": "static/$1" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
